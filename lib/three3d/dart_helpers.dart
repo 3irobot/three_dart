@@ -179,7 +179,11 @@ String toFixed<T extends num>(T x, int l) {
 }
 
 double parseFloat(String n) {
-  return double.parse(n);
+  try {
+    return double.parse(n);  
+  } catch(error) {
+    return 0.0;
+  }
 }
 
 void setList<T>(List<T> target, List<T> source) {
